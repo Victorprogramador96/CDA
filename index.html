@@ -1,57 +1,73 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CDA – Control de Citas</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
+  <header>
     <div class="container">
       <h1>CDA – Control de Citas</h1>
-      <p>Optimiza la programación, registro y seguimiento de citas vehiculares en tu Centro de Diagnóstico Automotor.</p>
-      <a href="https://tusitio.mixo.io" class="btn" target="_blank">Probar Demo IA</a>
+      <p class="lead">Sistema para agendar, editar y eliminar citas del Centro de Diagnóstico Automotor.</p>
+      <a class="btn" href="#lista">Ver lista de citas</a>
     </div>
   </header>
 
-  <section id="caracteristicas" class="section">
-    <h2>Características Principales</h2>
-    <div class="features">
-      <div class="feature">
-        <h3>Agenda Automática</h3>
-        <p>Registra y asigna citas de forma inteligente evitando sobrecargas o cruces de horarios.</p>
+  <main class="container">
+    <div class="grid">
+      <!-- Formulario -->
+      <div class="card">
+        <h2>Agendar / Editar Cita</h2>
+        <form id="formCita">
+          <input type="hidden" id="idCita">
+
+          <label for="propietario">Nombre del propietario</label>
+          <input id="propietario" type="text" placeholder="Ej. Juan Pérez" required>
+
+          <label for="telefono">Teléfono</label>
+          <input id="telefono" type="tel" placeholder="Ej. 3101234567">
+
+          <label for="placa">Placa del vehículo</label>
+          <input id="placa" type="text" placeholder="ABC123" required>
+
+          <label for="marca">Marca / Modelo</label>
+          <input id="marca" type="text" placeholder="Ej. Toyota Corolla">
+
+          <label for="fecha">Fecha</label>
+          <input id="fecha" type="date" required>
+
+          <label for="hora">Hora</label>
+          <input id="hora" type="time" required>
+
+          <label for="observaciones">Observaciones</label>
+          <textarea id="observaciones" rows="3" placeholder="Notas..."></textarea>
+
+          <div class="botones">
+            <button class="btn" type="submit" id="btnEnviar">Guardar cita</button>
+            <button type="button" id="btnCancelar" class="btn-secondary">Cancelar</button>
+          </div>
+        </form>
+        <p class="small">Las citas se almacenan localmente (modo demostración).</p>
       </div>
-      <div class="feature">
-        <h3>Panel Administrativo</h3>
-        <p>Interfaz sencilla para gestionar clientes, técnicos y reportes de servicio.</p>
-      </div>
-      <div class="feature">
-        <h3>Notificaciones</h3>
-        <p>Envío automático de recordatorios de cita por correo o mensaje.</p>
+
+      <!-- Lista -->
+      <div class="card" id="lista">
+        <h3>Lista de citas</h3>
+        <div id="listaCitas">
+          <div class="empty">No hay citas registradas</div>
+        </div>
+        <div class="botones">
+          <button id="btnLimpiar" class="btn-danger">Eliminar todas</button>
+        </div>
       </div>
     </div>
-  </section>
 
-  <section id="beneficios" class="section alt">
-    <h2>Beneficios del Sistema</h2>
-    <ul class="benefits">
-      <li>✅ Reducción de tiempos de espera.</li>
-      <li>✅ Control total de la operación diaria.</li>
-      <li>✅ Mejora la atención al cliente.</li>
-      <li>✅ Compatible con cualquier dispositivo.</li>
-    </ul>
-  </section>
-
-  <section id="contacto" class="section">
-    <h2>Contáctanos</h2>
-    <p>¿Deseas más información o una demostración personalizada?</p>
-    <a href="mailto:victorfigueroagalvis@example.com" class="btn">Escríbenos</a>
-  </section>
-
-  <footer>
-    <p>© 2025 CDA – Control de Citas | Desarrollado por <strong>Víctor Manuel Figueroa Galvis</strong> – SENA</p>
-  </footer>
+    <footer>
+      © 2025 CDA – Control de Citas | Desarrollado por Víctor Manuel Figueroa Galvis
+    </footer>
+  </main>
 
   <script src="script.js"></script>
 </body>

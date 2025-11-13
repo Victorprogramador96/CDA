@@ -1,77 +1,137 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+:root {
+  --blue:#003366;
+  --accent:#2ecc71;
+  --bg:#f4f6f8;
+  --card:#ffffff;
 }
 
+* { box-sizing: border-box; }
 body {
-  background-color: #f4f6f8;
-  color: #333;
+  font-family: Inter, Arial, sans-serif;
+  background: var(--bg);
+  margin: 0;
+  color: #222;
 }
-
-header.hero {
-  background: linear-gradient(135deg, #003366, #006699);
-  color: white;
-  padding: 100px 20px;
+header {
+  background: linear-gradient(135deg, var(--blue), #006699);
+  color: #fff;
+  padding: 36px 20px;
   text-align: center;
 }
-
-header .btn {
-  background-color: #2ecc71;
-  color: white;
-  padding: 12px 25px;
-  text-decoration: none;
-  border-radius: 25px;
-  display: inline-block;
-  margin-top: 20px;
-  transition: background 0.3s;
+.container {
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 0 16px;
 }
-
-header .btn:hover {
-  background-color: #27ae60;
+h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
 }
-
-.section {
-  padding: 80px 20px;
-  text-align: center;
+p.lead {
+  opacity: .95;
+  margin: 6px 0 0;
 }
-
-.section h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: #003366;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 20px;
+  align-items: start;
 }
-
-.features {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 25px;
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
 }
-
-.feature {
-  background: white;
-  border-radius: 15px;
-  padding: 25px;
-  width: 300px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+label {
+  display: block;
+  margin: 8px 0 6px;
+  font-weight: 600;
+  font-size: 14px;
 }
-
-.alt {
-  background-color: #e9eef2;
+input[type="text"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
 }
-
-.benefits {
+button.btn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+.btn-secondary {
+  background: #ddd;
+  color: #000;
+}
+.btn-danger {
+  background: #ef476f;
+  color: #fff;
+}
+.small {
+  font-size: 13px;
+  color: #555;
+}
+ul.citas {
   list-style: none;
-  font-size: 1.2em;
-  line-height: 2;
+  padding: 0;
+  margin: 0;
 }
-
-footer {
-  background-color: #003366;
-  color: white;
+.cita {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  align-items: center;
+}
+.actions button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 0;
+  cursor: pointer;
+}
+.actions .edit {
+  background: #ffd703;
+  color: #000;
+}
+.actions .del {
+  background: #ef476f;
+  color: #fff;
+}
+.empty {
+  color: #777;
   text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
+  padding: 18px;
+}
+footer {
+  margin: 30px 0;
+  text-align: center;
+  color: #666;
+  font-size: 13px;
+}
+.botones {
+  margin-top: 12px;
+  display: flex;
+  gap: 10px;
+}
+.btn {
+  text-decoration: none;
+}
+@media(max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
